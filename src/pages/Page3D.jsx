@@ -23,12 +23,13 @@ const Page3D = () => {
         };
     }, []);
 
+
     return (
         <div
             style={{
                 display: "flex",
                 justifyContent: "center",
-                marginTop: "50px",
+                marginTop: "40px",
                 width: "100%",
                 overflow: "hidden",
             }}
@@ -45,20 +46,23 @@ const Page3D = () => {
                             src={image1}
                             alt="Image 1"
                             style={{ width: "100%", height: "auto", objectFit: "contain" }}
+
                         />
                     </Grid>
                     <Grid item xs={4} style={{ display: "flex", justifyContent: "center" }}>
+
                         <img
                             src={image2}
                             alt="Image 2"
-                            style={{ width: "90%", height: "auto", objectFit: "contain" }}
+                            style={{ width: "90%", height: "auto", objectFit: "contain", transform: "translateX(15%)" }}
+
                         />
                     </Grid>
                     <Grid item xs={4} style={{ display: "flex", justifyContent: "center" }}>
                         <img
                             src={image3}
                             alt="Image 3"
-                            style={{ width: "70%", height: "auto", objectFit: "contain" }}
+                            style={{ width: "70%", height: "auto", objectFit: "contain", transform: "translateX(15%)" }}
                         />
                     </Grid>
                     <Grid item xs={4} style={{ display: "flex", justifyContent: "center" }}>
@@ -72,14 +76,14 @@ const Page3D = () => {
                         <img
                             src={image5}
                             alt="Image 5"
-                            style={{ width: "80%", height: "auto", objectFit: "contain" }}
+                            style={{ width: "80%", height: "auto", objectFit: "contain", transform: "translateX(15%)" }}
                         />
                     </Grid>
                     <Grid item xs={4} style={{ display: "flex", justifyContent: "center" }}>
                         <img
                             src={image6}
                             alt="Image 6"
-                            style={{ width: "80%", height: "auto", objectFit: "contain" }}
+                            style={{ width: "80%", height: "auto", objectFit: "contain", transform: "translateX(15%)" }}
                         />
                     </Grid>
                 </Grid>
