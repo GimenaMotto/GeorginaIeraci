@@ -1,5 +1,5 @@
-import React from "react";
-import { ImageList, ImageListItem } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Grid } from "@mui/material";
 import image1 from "../images/flyers3D/1.png";
 import image2 from "../images/flyers3D/2.png";
 import image3 from "../images/flyers3D/3.jpg";
@@ -8,38 +8,82 @@ import image5 from "../images/flyers3D/5.jpg";
 import image6 from "../images/flyers3D/6.JPG";
 
 const Page3D = () => {
-    const images = [
-        { src: image1, title: "Imagen 1" },
-        { src: image2, title: "Imagen 2" },
-        { src: image3, title: "Imagen 3" },
-        { src: image4, title: "Imagen 4" },
-        { src: image5, title: "Imagen 5" },
-        { src: image6, title: "Imagen 6" },
-        // Agrega más imágenes aquí
-    ];
+    const [gridWidth, setGridWidth] = useState(0);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setGridWidth(window.innerWidth - 340); // Ajusta el valor si necesitas un margen adicional
+        };
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     return (
-        <div className="Page3D" style={{ margin: "50px auto" }}>
-            <ImageList sx={{ width: "80%", margin: "0 auto", gap: 16, paddingLeft: 32 }} cols={3} rowHeight={220}>
-                <ImageListItem key={1} sx={{ width: "33%", height: "auto", marginBottom: 16 }}>
-                    <img src={images[0].src} alt={images[0].title} style={{ objectFit: "contain", width: "120%", height: "120%" }} />
-                </ImageListItem>
-                <ImageListItem key={2} sx={{ width: "33%", height: "auto", marginBottom: 16 }}>
-                    <img src={images[1].src} alt={images[1].title} style={{ objectFit: "contain", width: "100%", height: "100%" }} />
-                </ImageListItem>
-                <ImageListItem key={3} sx={{ width: "33%", height: "auto", marginBottom: 16 }}>
-                    <img src={images[2].src} alt={images[2].title} style={{ objectFit: "contain", width: "100%", height: "100%" }} />
-                </ImageListItem>
-                <ImageListItem key={4} sx={{ width: "33%", height: "auto", marginBottom: 16 }}>
-                    <img src={images[3].src} alt={images[3].title} style={{ objectFit: "contain", width: "100%", height: "100%" }} />
-                </ImageListItem>
-                <ImageListItem key={5} sx={{ width: "33%", height: "auto", marginBottom: 16 }}>
-                    <img src={images[4].src} alt={images[4].title} style={{ objectFit: "contain", width: "100%", height: "100%" }} />
-                </ImageListItem>
-                <ImageListItem key={6} sx={{ width: "33%", height: "auto", marginBottom: 16 }}>
-                    <img src={images[5].src} alt={images[5].title} style={{ objectFit: "contain", width: "100%", height: "100%" }} />
-                </ImageListItem>
-            </ImageList>
+        <div
+            style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "50px",
+                width: "100%",
+                overflow: "hidden",
+            }}
+        >
+            <div style={{ width: "60%" }}>
+                <Grid
+                    container
+                    spacing={1}
+                    justifyContent="center"
+                    style={{ maxWidth: `${gridWidth}px` }}
+                >
+                    <Grid item xs={4} style={{ display: "flex", justifyContent: "center" }}>
+                        <img
+                            src={image1}
+                            alt="Image 1"
+                            style={{ width: "100%", height: "auto", objectFit: "contain" }}
+                        />
+                    </Grid>
+                    <Grid item xs={4} style={{ display: "flex", justifyContent: "center" }}>
+                        <img
+                            src={image2}
+                            alt="Image 2"
+                            style={{ width: "90%", height: "auto", objectFit: "contain" }}
+                        />
+                    </Grid>
+                    <Grid item xs={4} style={{ display: "flex", justifyContent: "center" }}>
+                        <img
+                            src={image3}
+                            alt="Image 3"
+                            style={{ width: "70%", height: "auto", objectFit: "contain" }}
+                        />
+                    </Grid>
+                    <Grid item xs={4} style={{ display: "flex", justifyContent: "center" }}>
+                        <img
+                            src={image4}
+                            alt="Image 4"
+                            style={{ width: "70%", height: "auto", objectFit: "contain" }}
+                        />
+                    </Grid>
+                    <Grid item xs={4} style={{ display: "flex", justifyContent: "center" }}>
+                        <img
+                            src={image5}
+                            alt="Image 5"
+                            style={{ width: "80%", height: "auto", objectFit: "contain" }}
+                        />
+                    </Grid>
+                    <Grid item xs={4} style={{ display: "flex", justifyContent: "center" }}>
+                        <img
+                            src={image6}
+                            alt="Image 6"
+                            style={{ width: "80%", height: "auto", objectFit: "contain" }}
+                        />
+                    </Grid>
+                </Grid>
+            </div>
         </div>
     );
 };

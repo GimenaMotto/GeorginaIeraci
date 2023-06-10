@@ -1,4 +1,4 @@
-body,
+/* body,
 #root {
   margin: 0;
   padding: 0;
@@ -8,4 +8,20 @@ body,
   height: 100vh;
   width: 100vw;
   background-color: #f0ede6;
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0ede6;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+}
+
+.App {
+  height: 100%;
+  width: 100%;
 }

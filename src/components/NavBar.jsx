@@ -6,8 +6,8 @@ import { Circle } from '@mui/icons-material';
 
 const NavBar = () => {
     return (
-        <div className='NavBar'>
-            <AppBar sx={{ backgroundColor: 'transparent', boxShadow: 'none', mt: 3 }} className='myAppBar'>
+        <div className='NavBar' >
+            <AppBar sx={{ backgroundColor: 'transparent', boxShadow: 'none', mt: 0, pt: 3 }} position="static" className='myAppBar'>
                 <Toolbar sx={{ display: 'flex', alignItems: 'center' }}>
                     <Box sx={{ flexGrow: 1 }}>
                         <Typography variant='h5' sx={{ fontFamily: 'Geologica', fontWeight: 800, fontSize: '1.4rem', letterSpacing: '0.05em', mt: 2, ml: 24 }} className='Geor'>
